@@ -3,4 +3,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"./assets\\header.jpg":[["header.cb3a252c.jpg","YvDb"],"YvDb"]}],"C4Nx":[function(require,module,exports) {
 "use strict";require("./styles.scss");
 },{"./styles.scss":"I4sy"}]},{},["C4Nx"], null)
-//# sourceMappingURL=bundle.d526cade.js.map
+//# sourceMappingURL=bundle.4dd0e16b.js.map

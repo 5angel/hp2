@@ -35,7 +35,7 @@ p {
   box-shadow: 20px 20px 0 $base;
 
   &__title {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 400;
   }
 
@@ -65,8 +65,25 @@ em {
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) {
   .heading {
+    top: 50vh;
+    bottom: unset;
     left: 0;
     width: 100%;
     margin: 0;
+
+    &__title {
+      margin-bottom: 16px;
+    }
+
+    &__name {
+      text-align: center;
+      font-size: 36px;
+    }
+  }
+
+  .kozulya {
+    display: inline-block;
+    margin-top: -16px;
+    font-size: 68px;
   }
 }
