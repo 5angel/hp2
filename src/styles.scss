@@ -62,22 +62,71 @@ em {
   color: $base;
 }
 
+.content {
+  padding: 80px 0;
+  background-color: snow;
+}
+
+.row {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.column {
+  width: 400px;
+  padding: 20px 40px;
+
+  &.middle {
+    padding-right: 38px;
+    padding-left: 38px;
+    border: 2px solid $base;
+    border-width: 0 2px;
+  }
+}
+
+.icon {
+  display: block;
+  margin: -40px auto 20px;
+}
+
+.question {
+  margin-bottom: 40px;
+  font-family: 'Trebuchet MS';
+  font-size: 24px;
+  text-align: center;
+}
+
+.dilimiter {
+  position: relative;
+  height: 200px;
+}
+
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) {
+  .header {
+    height: auto;
+    padding-top: 50vh;
+  }
+
   .heading {
-    top: 50vh;
+    position: relative;
     bottom: unset;
-    left: 0;
+    left: unset;
     width: 100%;
     margin: 0;
+    text-align: center;
 
     &__title {
       margin-bottom: 16px;
     }
 
     &__name {
-      text-align: center;
       font-size: 36px;
+    }
+
+    &__intro {
+      text-align: left;
     }
   }
 
@@ -85,5 +134,99 @@ em {
     display: inline-block;
     margin-top: -16px;
     font-size: 68px;
+  }
+
+  .content {
+    padding: 40px 0;
+  }
+
+  .row {
+    flex-direction: column;
+    width: auto;
+    padding: 0 20px;
+  }
+
+  .column {
+    width: auto;
+
+    &, &.middle {
+      padding: 20px;
+    }
+
+    &.middle {
+      border-width: 2px 0;
+    }
+  }
+
+  .icon {
+    margin-top: 20px;
+  }
+}
+
+// CUBE
+
+$size: 60px;
+$side: $size / 2;
+
+.cube {
+  perspective: 1000px;
+  perspective-origin: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -$side;
+  margin-left: -$side;
+  text-align: center;
+
+  &__container {
+    display: inline-block;
+    transform-style: preserve-3d;
+    animation: rotate 10s infinite linear;
+  }
+
+  &, &__container {
+    width: $size;
+    height: $size;
+  }
+}
+
+.side {
+  position: absolute;
+  width: $size;
+  height: $size;
+  background-image: url('./assets/header.jpg');
+  background-position: 100px 100px;
+  background-position: 432px 816px;
+  background-size: 800px;
+  box-shadow: inset 0 0 8px #cc6633;
+}
+
+.back {
+  transform: translateZ(-$side);
+}
+
+.left {
+  transform: translateX(-$side) rotateY(90deg);
+}
+
+.right {
+  transform: translateX($side) rotateY(90deg);
+}
+
+.top {
+  transform: translateY(-$side) rotateX(90deg);
+}
+
+.bottom {
+  transform: translateY($side) rotateX(90deg);
+}
+
+.front {
+  transform: translateZ($side);
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotatex(360deg) rotateY(360deg) rotateZ(360deg);
   }
 }
